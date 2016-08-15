@@ -1,7 +1,7 @@
 <?php
 
 $datetime = date('Y.m.d H:i:s');	
- 
+ /*
 try
   {
     //open the FAKEPLAYERS KICK database
@@ -54,7 +54,7 @@ $result = $db5->query("select ip, count(*) from playerlist group by ip having co
     print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
   }     
 
- 
+*/ 
 
   
   
