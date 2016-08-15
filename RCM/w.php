@@ -31,7 +31,7 @@ if (file_exists($log_folder . '/g_log.log'))
     $mplogfiler = $parseglog;
    }
  }
-if (strpos($mplogfiler, $mplogfile) != false)
+if (trim($mplogfiler) != trim($mplogfile))
  {
   echo "\n YOU USE WRONG LOGFILE IN cfg/_connection.php \n LINE WITH mplogfile - \n\n CHANGE \n" . $mplogfiler . " \n TO \n" . $mplogfile . " \n FOR RCM WORKING!!! \n \n \n";
   sleep(130);
@@ -676,13 +676,13 @@ while (true)
          }
         else if (preg_match('/InitGame:/', $parseline, $xnon))
          {
-          if ((strpos($parseline, 'g_gametype\^5sd') != false) || (strpos($parseline, 'g_gametype\^9old^5sd') != false) || (strpos($parseline, 'g_gametype\^5sd') != false) || (strpos($parseline, 'g_gametype\pam') != false) || (strpos($parseline, 'g_gametype\promod') != false) || (strpos($parseline, 'g_gametype\^1bash') != false) || (strpos($parseline, 'g_gametype\^5promod') != false) || (strpos($parseline, 'g_gametype\rsd') != false) || (strpos($parseline, 'g_gametype\sd') != false) || (strpos($parseline, 'g_gametype\bel') != false))
+          if ((strpos($parseline, 'g_gametype\^5sd') !== false) || (strpos($parseline, 'g_gametype\^9old^5sd') !== false) || (strpos($parseline, 'g_gametype\^5sd') !== false) || (strpos($parseline, 'g_gametype\pam') !== false) || (strpos($parseline, 'g_gametype\promod') !== false) || (strpos($parseline, 'g_gametype\^1bash') !== false) || (strpos($parseline, 'g_gametype\^5promod') !== false) || (strpos($parseline, 'g_gametype\rsd') !== false) || (strpos($parseline, 'g_gametype\sd') !== false) || (strpos($parseline, 'g_gametype\bel') !== false))
            {
             echo ' - Objective gametype - ';
             $geosp = 'sd';
             if ($game_patch == 'cod1_1.1')
              {
-              if (strpos($parseline, 'g_gametype\sd') != false)
+              if (strpos($parseline, 'g_gametype\sd') !== false)
                {
                 usleep($sleep_rcon);
                 require $cpath . 'ReCodMod/functions/getinfo/sd_fix/sdfix.php';
