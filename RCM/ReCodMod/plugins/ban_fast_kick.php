@@ -44,9 +44,9 @@ $result = $db5->query("select ip, count(*) from playerlist group by ip having co
 	}
 
 
-    $db5 = NULL;
-	$db2 = NULL;
-	$result = NULL;
+    //$db5 = NULL;
+	//$db2 = NULL;
+	//$result = NULL;
   }
   
   catch(PDOException $e)
