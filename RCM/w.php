@@ -662,9 +662,8 @@ while (true)
          }
         else if (preg_match('/Q;/', $parseline, $xnon))
          {
-          usleep($spps);
+          usleep($spps/4);
           require $cpath . 'ReCodMod/plugins/log_reader_stats_updater.php';
-          usleep($spps / 4);
          }
         else if (preg_match('/K;/', $parseline, $xnon))
          {
