@@ -365,7 +365,7 @@ while (true)
      {
       if ($x_stop_lp == 0)
        {
-        $parseline = readloglines($mplogfile);
+        $parseline = trim(readloglines($mplogfile));
 		
         clearstatcache();
         require($cpath . "ReCodMod/functions/log_reader_functions.php");
