@@ -86,9 +86,7 @@ $kjgvjhk
 </tr>");
 	
 	}
-	
-$result = null;
-$db2 = NULL;
+
   }
   catch(PDOException $e)
   {
