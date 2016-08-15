@@ -249,5 +249,25 @@ if (empty($game_patch))
 	$game_patch = trim($game_patch);   
    }
  }
-
+if(!empty($db)){
+$db = NULL;
+echo ' db null ';}
+if(!empty($db1)){
+$db1 = NULL;
+echo ' db1 null ';}
+if(!empty($db2)){
+$db2 = null;
+echo ' db2 null ';}
+if(!empty($db3)){
+$db3 = NULL;
+echo ' db3 null ';}
+if(!empty($db4)){
+$db4 = NULL;
+echo ' db4 null ';}
+if(!empty($db5)){
+$db5 = NULL;
+echo ' db5 null ';}
+if(!empty($connect)){
+fclose($connect);
+echo ' rcon null ';}
 ?>

@@ -110,17 +110,17 @@ while (true)
         else if ($player_cnt <= 14)
           $spps = 100000;
         else if ($player_cnt <= 20)
-          $spps = 99000;
-        else if ($player_cnt <= 30)
           $spps = 90000;
-        else if ($player_cnt <= 40)
+        else if ($player_cnt <= 30)
           $spps = 80000;
+        else if ($player_cnt <= 40)
+          $spps = 60000;
         else if ($player_cnt <= 50)
-          $spps = 70000;
-        else if ($player_cnt <= 64)
           $spps = 50000;
-        else if ($player_cnt <= 128)
+        else if ($player_cnt <= 64)
           $spps = 40000;
+        else if ($player_cnt <= 128)
+          $spps = 20000;
         $bck = 1;
         if (($spps != 721000) && ($x_numberz == 0))
          {

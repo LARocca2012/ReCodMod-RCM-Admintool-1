@@ -35,6 +35,7 @@ if ($x_stop_lp == 0)
       try
        {
         usleep(10300);
+		
         $db3  = new PDO('sqlite:' . $cpath . 'ReCodMod/databases/db3.sqlite');
         $sql  = "select * FROM x_db_play_stats where s_player='$x4vvv' limit 1";
         $res  = $db3->query("select * FROM x_db_play_stats where s_player='$x4vvv' limit 1");
@@ -131,8 +132,26 @@ if ($x_stop_lp == 0)
              }
            }
          }
-        //$res = null;
-        //$db3 = NULL;
+ usleep(10000);
+		if(!empty($db)){
+$db = NULL;
+echo ' db null ';}
+if(!empty($db1)){
+$db1 = NULL;
+echo ' db1 null ';}
+if(!empty($db2)){
+$db2 = null;
+echo ' db2 null ';}
+if(!empty($db3)){
+$db3 = NULL;
+echo ' db3 null ';}
+if(!empty($db4)){
+$db4 = NULL;
+echo ' db4 null ';}
+if(!empty($db5)){
+$db5 = NULL;
+echo ' db5 null ';}
+	  
        }
       catch (PDOException $e)
        {
@@ -141,6 +160,26 @@ if ($x_stop_lp == 0)
       echo '-> EXIT ' . $x4e . ' ' . $tfinishh = (microtime(true) - $start);
       ++$x_stop_lp;
       /////////////////////////////////
+        usleep(10000);
+		if(!empty($db)){
+$db = NULL;
+echo ' db null ';}
+if(!empty($db1)){
+$db1 = NULL;
+echo ' db1 null ';}
+if(!empty($db2)){
+$db2 = null;
+echo ' db2 null ';}
+if(!empty($db3)){
+$db3 = NULL;
+echo ' db3 null ';}
+if(!empty($db4)){
+$db4 = NULL;
+echo ' db4 null ';}
+if(!empty($db5)){
+$db5 = NULL;
+echo ' db5 null ';}
+	  
      }
    }
   else
@@ -266,8 +305,26 @@ if ($x_stop_lp == 0)
                  }
                }
              }
-            // $res = null;
-            // $db3 = NULL;
+ usleep(10000);
+		if(!empty($db)){
+$db = NULL;
+echo ' db null ';}
+if(!empty($db1)){
+$db1 = NULL;
+echo ' db1 null ';}
+if(!empty($db2)){
+$db2 = null;
+echo ' db2 null ';}
+if(!empty($db3)){
+$db3 = NULL;
+echo ' db3 null ';}
+if(!empty($db4)){
+$db4 = NULL;
+echo ' db4 null ';}
+if(!empty($db5)){
+$db5 = NULL;
+echo ' db5 null ';}
+	  
            }
           catch (PDOException $e)
            {
@@ -303,8 +360,26 @@ if ($x_stop_lp == 0)
                  }
                }
              }
-            // $res = null;
-            // $db3 = NULL;
+ usleep(10000);
+		if(!empty($db)){
+$db = NULL;
+echo ' db null ';}
+if(!empty($db1)){
+$db1 = NULL;
+echo ' db1 null ';}
+if(!empty($db2)){
+$db2 = null;
+echo ' db2 null ';}
+if(!empty($db3)){
+$db3 = NULL;
+echo ' db3 null ';}
+if(!empty($db4)){
+$db4 = NULL;
+echo ' db4 null ';}
+if(!empty($db5)){
+$db5 = NULL;
+echo ' db5 null ';}
+	  
            }
           catch (PDOException $e)
            {
@@ -337,7 +412,27 @@ if ($x_stop_lp == 0)
                  }
                }
              }
-           }
+  usleep(10000);
+		if(!empty($db)){
+$db = NULL;
+echo ' db null ';}
+if(!empty($db1)){
+$db1 = NULL;
+echo ' db1 null ';}
+if(!empty($db2)){
+$db2 = null;
+echo ' db2 null ';}
+if(!empty($db3)){
+$db3 = NULL;
+echo ' db3 null ';}
+if(!empty($db4)){
+$db4 = NULL;
+echo ' db4 null ';}
+if(!empty($db5)){
+$db5 = NULL;
+echo ' db5 null ';}
+	           
+		  }
           catch (PDOException $e)
            {
             print ' FILE:  ' . __FILE__ . '  Exception : ' . $e->getMessage();
@@ -503,8 +598,26 @@ if ($x_stop_lp == 0)
               echo 'okfrag';
               //echo $vv12n;
              }
-            //$result = null;
-            $db4 = NULL;
+ usleep(10000);
+		if(!empty($db)){
+$db = NULL;
+echo ' db null ';}
+if(!empty($db1)){
+$db1 = NULL;
+echo ' db1 null ';}
+if(!empty($db2)){
+$db2 = null;
+echo ' db2 null ';}
+if(!empty($db3)){
+$db3 = NULL;
+echo ' db3 null ';}
+if(!empty($db4)){
+$db4 = NULL;
+echo ' db4 null ';}
+if(!empty($db5)){
+$db5 = NULL;
+echo ' db5 null ';}
+	  
            }
           catch (PDOException $e)
            {
@@ -609,8 +722,26 @@ if ($x_stop_lp == 0)
  VALUES ('$x_kill','','','','','','','','','','$date','','$kill','$vv6','','','$idkill','')");
                    }
                  }
-                //$result = null;
-                //$db = NULL;
+ usleep(10000);
+		if(!empty($db)){
+$db = NULL;
+echo ' db null ';}
+if(!empty($db1)){
+$db1 = NULL;
+echo ' db1 null ';}
+if(!empty($db2)){
+$db2 = null;
+echo ' db2 null ';}
+if(!empty($db3)){
+$db3 = NULL;
+echo ' db3 null ';}
+if(!empty($db4)){
+$db4 = NULL;
+echo ' db4 null ';}
+if(!empty($db5)){
+$db5 = NULL;
+echo ' db5 null ';}
+	  
                }
               catch (PDOException $e)
                {
@@ -703,8 +834,26 @@ if ($x_stop_lp == 0)
                       //
                      }
                    }
-                  //$result = null;
-                  //$db3    = NULL;
+ usleep(10000);
+		if(!empty($db)){
+$db = NULL;
+echo ' db null ';}
+if(!empty($db1)){
+$db1 = NULL;
+echo ' db1 null ';}
+if(!empty($db2)){
+$db2 = null;
+echo ' db2 null ';}
+if(!empty($db3)){
+$db3 = NULL;
+echo ' db3 null ';}
+if(!empty($db4)){
+$db4 = NULL;
+echo ' db4 null ';}
+if(!empty($db5)){
+$db5 = NULL;
+echo ' db5 null ';}
+	  
                  }
                 catch (PDOException $e)
                  {

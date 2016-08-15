@@ -337,8 +337,20 @@ if (strpos($msgr, $ixz . 'banlist') !== false)
         AddToLogInfo("[" . $datetime . "] BANLIST-10: (" . $x_nickx . ") (" . $msgr . ") reason: LIST");
         ++$x_stop_lp;
         echo '  ' . substr($tfinishh = (microtime(true) - $start), 0, 7);
-        $result = null;
-        $db2    = NULL;
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+fclose($connect);
         return;
        }
       catch (PDOException $e)

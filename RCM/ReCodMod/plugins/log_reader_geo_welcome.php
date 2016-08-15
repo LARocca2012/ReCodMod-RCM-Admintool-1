@@ -230,9 +230,6 @@ VALUES ('$x4vvv','999','1','1','0','0','0','0','$date','','','$nickname','$guid'
                    }
                   //return;
                  }
-                $result = null;
-                $db4    = NULL;
-                $db3    = NULL;
                }
               catch (PDOException $e)
                {
@@ -248,5 +245,20 @@ VALUES ('$x4vvv','999','1','1','0','0','0','0','$date','','','$nickname','$guid'
      }
    }
   ///////////////////////////
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+fclose($connect);  
+  
  }
 ?>

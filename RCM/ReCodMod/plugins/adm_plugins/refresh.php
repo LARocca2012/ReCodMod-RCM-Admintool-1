@@ -164,7 +164,7 @@ AddToLogTOP("</table>
 
 
  }
-
+ 
   }
   catch(PDOException $e)
   {
@@ -407,6 +407,7 @@ $kjgvjhk
 AddToLogbanlist("</table> 
  </td></table>"); 	
 	
+ 
   }
   catch(PDOException $e)
   {
