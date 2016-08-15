@@ -1,11 +1,11 @@
  <?php
 if ($x_stop_lp == 0)
  {
-  if ((strpos($parseline, 'J;') != false) || (strpos($parseline, 'InitGame: ') != false) || (strpos($parseline, 'RestartGame:') != false) || (strpos($parseline, 'L;') != false) || (strpos($parseline, 'W;') != false) || (strpos($parseline, '-----------------------------------') != false))
+  if ((strpos($parseline, 'J;') !== false) || (strpos($parseline, 'InitGame: ') !== false) || (strpos($parseline, 'RestartGame:') !== false) || (strpos($parseline, 'L;') !== false) || (strpos($parseline, 'W;') !== false) || (strpos($parseline, '-----------------------------------') !== false))
    {
     //echo'--';
    }
-  else if (strpos($parseline, 'Q;') != false)
+  else if (strpos($parseline, 'Q;') !== false)
    {
     if ($game_patch == 'cod1_1.1')
      {
@@ -185,7 +185,7 @@ echo ' db5 null ';}
   else
    {
     //echo'+';
-    if (strpos($parseline, 'K;') != false)
+    if (strpos($parseline, 'K;') !== false)
      {
       if ($x_stop_lp == 0)
        {
