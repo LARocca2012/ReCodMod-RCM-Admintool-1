@@ -187,11 +187,11 @@ cd /opt/rcm/myserver/cfg/
 #Need edit all_connection.php for RCM AdminMod working
 //Edit first this file for working
 
-sudo nano all_connection.php
+sudo nano _connection.php
 
 //Another two you can edit later
 
-sudo nano all_settings.php
+sudo nano _settings.php
 
 sudo nano _groups.php
 
@@ -371,10 +371,13 @@ New fun messages - gj, shit, wp, n1.
 
 !update - download last update in (ReCodMod/x_update  folder) for update need unarchive and replace files from archive.
 
-!nextamp - Show next map 
+!nextmap - Show next map 
 
 # SPECIAL INFO
 
 In x_logs folder after install and few days work, you can find chat, stats.... logs in html format, you can use it for website.
+
+
+* This is free version (some plugins not stable). Full version v.4.x.x [30.August.2016] (with all plugins, and working vote plugins and special plugins + web control - 10$)
 
 
