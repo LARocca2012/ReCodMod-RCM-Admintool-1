@@ -103,8 +103,7 @@ AddToLogTOP("
 echo ' '.$num.' ';	
 	}}
 	
-$result = null;
-$db3 = NULL;
+
   }
   catch(PDOException $e)
   {
