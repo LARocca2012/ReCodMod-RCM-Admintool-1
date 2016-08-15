@@ -378,6 +378,6 @@ New fun messages - gj, shit, wp, n1.
 In x_logs folder after install and few days work, you can find chat, stats.... logs in html format, you can use it for website.
 
 
-* This is free version (some plugins not stable). Full version v.4.x.x [30.August.2016] (with all plugins, and working vote plugins and special plugins + web control - 10$)
+* This is free version (some plugins not stable). Full version v.4.x.x //30.August.2016// (with all plugins, and working vote plugins and special plugins + web control - 10$)
 
 
