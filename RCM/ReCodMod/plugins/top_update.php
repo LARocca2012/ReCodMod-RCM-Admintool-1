@@ -38,7 +38,7 @@ try
    $result = $db3->query("SELECT * FROM x_db_play_stats WHERE s_kills>=$limm ORDER BY (s_ratio+0) DESC LIMIT 500");
     foreach($result as $row)
     {		
-
+usleep(50000);
 ++$num;
 
         $id       = $row['id'];
