@@ -1,17 +1,24 @@
 <?php
 
 $datetime = date('Y.m.d H:i:s');	
- /*
+
 try
   {
-    //open the FAKEPLAYERS KICK database
-    $db5 = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db5.sqlite');
+	  if (empty($adminlists))	  
+$db = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db1.sqlite');
+else
+$db = new PDO('sqlite:'.$adminlists);
 ////////////////////////////
  if (empty($bannlist))	  
 $db2 = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db2.sqlite');
 else
 $db2 = new PDO('sqlite:'.$bannlist);
-////////////////////////////
+////////////////////////////    
+	
+	
+	//open the FAKEPLAYERS KICK database
+    $db5 = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db5.sqlite');
+/*
 	if ((!empty($i_id)) && (!empty($i_name)) && (!empty($i_ip)))
 	{
     
@@ -42,44 +49,14 @@ $result = $db5->query("select ip, count(*) from playerlist group by ip having co
     }		
 }
 	}
+*/
 
-
-    //$db5 = NULL;
-	//$db2 = NULL;
-	//$result = NULL;
-  }
-  
-  catch(PDOException $e)
-  {
-    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
-  }     
-
-*/ 
-
-  
-  
-  
-  
-  
-try
-  {	
-	   if (empty($adminlists))	  
-$db = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db1.sqlite');
-else
-$db = new PDO('sqlite:'.$adminlists);
 $sql = "SELECT * FROM x_db_admins WHERE s_group='$i_ip' and s_group='0' or s_group=111 LIMIT 1";
  $stat = $db->query($sql)->fetchColumn();
 if($stat > 0)
 {
  
  }else{
-
-////////////////////////////
- if (empty($bannlist))	  
-$db2 = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db2.sqlite');
-else
-$db2 = new PDO('sqlite:'.$bannlist);
-////////////////////////////
 
     $result = $db2->query("SELECT * FROM bans WHERE ip='$i_ip'");
     foreach($result as $row)
@@ -170,14 +147,6 @@ AddToLog("[".$datetime."] BANNED NICK KICK: (" . $i_ip . ") (" . $i_name . ")");
 }
 
 
-  }
-  catch(PDOException $e)
-  {
-    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
-  }
-
-
-
 
 if ($registerx == '1' ) {
 
@@ -185,7 +154,19 @@ if ($registerx == '1' ) {
 require $cpath.'ReCodMod/plugins/syncronization_site.php';
  
                      }
-
+		 
 					 
+	 $db5 = NULL;
+	 $db = NULL;
+	 $db2 = NULL;
+	$result = NULL;				 
+					 
+	  }
+  
+  catch(PDOException $e)
+  {
+    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
+  }     
+				 
 ?>
  

@@ -240,6 +240,7 @@ else
 	      { 
 		 ++$knownplayr;
          //++$x_stop_lp;
+		 rcon('say ^1RCM reloaded!', '');
 		 $x_stop_lp = 100;
 		 if(!empty($db))
 $db = NULL;

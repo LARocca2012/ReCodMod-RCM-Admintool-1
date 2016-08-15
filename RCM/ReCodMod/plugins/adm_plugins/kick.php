@@ -1,4 +1,5 @@
 <?php
+if ($x_stop_lp == 0 ) {
 if (strpos($msgr, $ixz.'kick ') !== false){  
 echo "\n[ADK] : [",$datetime, "] : ".$nickr." : ".$msgr; 
 //$knownplayr = 0;
@@ -51,9 +52,11 @@ else { rcon('akick '. $x_idn.' " ^6[^7Kicked by Admin^6]"', ''); }
 echo '  bb  '.substr($tfinishh = (microtime(true) - $start),0,7);
 ++$x_number;
 ++$x_return;
+++$x_stop_lp;
 	}else{
 ++$x_number;
-++$x_return;	
+++$x_return;
+++$x_stop_lp;	
 	}
    }
   } 
@@ -116,13 +119,15 @@ if ($game_ac == '0'){ rcon('clientkick '. $i_id, '');}
 else { rcon('akick '. $i_id.' " ^6[^7Kicked by Admin^6]"', ''); }
 	  AddToLog("[".$datetime."] KICKED: " . $i_ip . " (" . $i_namex . ") (" . $i_id . ") BY: (" . $x_nickx . ") ");    
 echo '  bb  '.substr($tfinishh = (microtime(true) - $start),0,7);
-
+++$x_stop_lp;
 if($player_cnt == $i){
 ++$x_number;
-++$x_return;}
+++$x_return;
+++$x_stop_lp;}
 	}else{
 ++$x_number;
 ++$x_return;	
+++$x_stop_lp;
 	}
    }
   } 
@@ -137,6 +142,7 @@ $db = NULL;
 
 	
 }	     
+}
 }
 	?>
  

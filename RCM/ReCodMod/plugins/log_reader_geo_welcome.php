@@ -241,10 +241,29 @@ VALUES ('$x4vvv','999','1','1','0','0','0','0','$date','','','$nickname','$guid'
        } ///end loop
       //ob_end_flush(); 
       echo '   =W=   ' . $tfinishh = (microtime(true) - $start);
+	  if($tfinishh > 30) {
+	if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+fclose($connect);  
+	  exit;}
       //return;
      }
    }
   ///////////////////////////
+  
+  $zrandom  = rand(0, 8);
+      if ($zrandom  == 4){
 if(!empty($db))
 $db = NULL;
 if(!empty($db1))
@@ -259,6 +278,8 @@ if(!empty($db5))
 $db5 = NULL;
 if(!empty($connect))
 fclose($connect);  
-  
+	  }
+if($tfinishh > 30) 
+	exit;
  }
 ?>

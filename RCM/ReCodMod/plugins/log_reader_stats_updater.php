@@ -159,36 +159,26 @@ echo ' db5 null ';}
        }
       echo '-> EXIT ' . $x4e . ' ' . $tfinishh = (microtime(true) - $start);
       ++$x_stop_lp;
+	  exit;
       /////////////////////////////////
-        usleep(10000);
-		if(!empty($db)){
-$db = NULL;
-echo ' db null ';}
-if(!empty($db1)){
-$db1 = NULL;
-echo ' db1 null ';}
-if(!empty($db2)){
-$db2 = null;
-echo ' db2 null ';}
-if(!empty($db3)){
-$db3 = NULL;
-echo ' db3 null ';}
-if(!empty($db4)){
-$db4 = NULL;
-echo ' db4 null ';}
-if(!empty($db5)){
-$db5 = NULL;
-echo ' db5 null ';}
 	  
      }
    }
   else
    {
     //echo'+';
-    if (strpos($parseline, 'K;') !== false)
+     if (strpos($parseline, 'K;') !== false)
      {
+		 
+		
       if ($x_stop_lp == 0)
        {
+	          try
+           {
+            $db3  = new PDO('sqlite:' . $cpath . 'ReCodMod/databases/db3.sqlite');
+
+	   
+		   
         //echo '-------------';
         ///////////////////////////
         require $cpath . 'cfg/_connection.php';
@@ -277,9 +267,7 @@ echo ' db5 null ';}
             $mdguid = $vv6;
             $mdxxx  = $vv6;
            }
-          try
-           {
-            $db3  = new PDO('sqlite:' . $cpath . 'ReCodMod/databases/db3.sqlite');
+ 
             $sql  = "select * FROM x_db_play_stats where s_player='$x_kill' and s_guid='' limit 1";
             $stat = $db3->query($sql)->fetchColumn();
             if ($stat > 0)
@@ -305,34 +293,7 @@ echo ' db5 null ';}
                  }
                }
              }
- usleep(10000);
-		if(!empty($db)){
-$db = NULL;
-echo ' db null ';}
-if(!empty($db1)){
-$db1 = NULL;
-echo ' db1 null ';}
-if(!empty($db2)){
-$db2 = null;
-echo ' db2 null ';}
-if(!empty($db3)){
-$db3 = NULL;
-echo ' db3 null ';}
-if(!empty($db4)){
-$db4 = NULL;
-echo ' db4 null ';}
-if(!empty($db5)){
-$db5 = NULL;
-echo ' db5 null ';}
-	  
-           }
-          catch (PDOException $e)
-           {
-            print ' FILE:  ' . __FILE__ . '  Exception : ' . $e->getMessage();
-           }
-          try
-           {
-            $db3  = new PDO('sqlite:' . $cpath . 'ReCodMod/databases/db3.sqlite');
+
             $sql  = "select * FROM x_db_play_stats where s_player='$x_kill' limit 1";
             $stat = $db3->query($sql)->fetchColumn();
             if (empty($stat))
@@ -360,34 +321,6 @@ echo ' db5 null ';}
                  }
                }
              }
- usleep(10000);
-		if(!empty($db)){
-$db = NULL;
-echo ' db null ';}
-if(!empty($db1)){
-$db1 = NULL;
-echo ' db1 null ';}
-if(!empty($db2)){
-$db2 = null;
-echo ' db2 null ';}
-if(!empty($db3)){
-$db3 = NULL;
-echo ' db3 null ';}
-if(!empty($db4)){
-$db4 = NULL;
-echo ' db4 null ';}
-if(!empty($db5)){
-$db5 = NULL;
-echo ' db5 null ';}
-	  
-           }
-          catch (PDOException $e)
-           {
-            print ' FILE:  ' . __FILE__ . '  Exception : ' . $e->getMessage();
-           }
-          try
-           {
-            $db3  = new PDO('sqlite:' . $cpath . 'ReCodMod/databases/db3.sqlite');
             $sql  = "select * FROM x_db_play_stats where s_player='$x_kill' and (s_city is null OR s_city = '') limit 1";
             $stat = $db3->query($sql)->fetchColumn();
             if ($stat > 0)
@@ -412,36 +345,7 @@ echo ' db5 null ';}
                  }
                }
              }
-  usleep(10000);
-		if(!empty($db)){
-$db = NULL;
-echo ' db null ';}
-if(!empty($db1)){
-$db1 = NULL;
-echo ' db1 null ';}
-if(!empty($db2)){
-$db2 = null;
-echo ' db2 null ';}
-if(!empty($db3)){
-$db3 = NULL;
-echo ' db3 null ';}
-if(!empty($db4)){
-$db4 = NULL;
-echo ' db4 null ';}
-if(!empty($db5)){
-$db5 = NULL;
-echo ' db5 null ';}
-	           
-		  }
-          catch (PDOException $e)
-           {
-            print ' FILE:  ' . __FILE__ . '  Exception : ' . $e->getMessage();
-           }
-          try
-           {
-            $db3 = new PDO('sqlite:' . $cpath . 'ReCodMod/databases/db3.sqlite');
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            $zzk = rand(0, 3);
+           $zzk = rand(0, 3);
             if ($namefaker == 0)
               $zzk = 'FUCK';
             if ($zzk == '1')
@@ -598,38 +502,11 @@ echo ' db5 null ';}
               echo 'okfrag';
               //echo $vv12n;
              }
- usleep(10000);
-		if(!empty($db)){
-$db = NULL;
-echo ' db null ';}
-if(!empty($db1)){
-$db1 = NULL;
-echo ' db1 null ';}
-if(!empty($db2)){
-$db2 = null;
-echo ' db2 null ';}
-if(!empty($db3)){
-$db3 = NULL;
-echo ' db3 null ';}
-if(!empty($db4)){
-$db4 = NULL;
-echo ' db4 null ';}
-if(!empty($db5)){
-$db5 = NULL;
-echo ' db5 null ';}
-	  
-           }
-          catch (PDOException $e)
-           {
-            print ' FILE:  ' . __FILE__ . '  Exception : ' . $e->getMessage();
-           }
+
           if ($x_stop_lpst == 0)
            {
             if ($kill)
              {
-              try
-               {
-                $db3 = new PDO('sqlite:' . $cpath . 'ReCodMod/databases/db3.sqlite');
                 if ($guids == 0)
                  {
                   $result = $db3->query("SELECT * FROM x_db_play_stats WHERE s_player='{$x_kill}'");
@@ -652,7 +529,28 @@ echo ' db5 null ';}
                       $ratio_n = substr($ratio_x, 0, 19);
                       usleep(1000);
                       $db3->exec("UPDATE x_db_play_stats SET  s_lasttime='{$dtx2}', s_skill='{$skil_x}', s_ratio='{$ratio_n}' WHERE s_player='{$x_kill}' and s_fall='{$idkill}'");
-                      echo '    ' . substr($tfinishh = (microtime(true) - $start), 0, 4);
+                      $tfinishh = substr( (microtime(true) - $start), 0, 4);
+					  if($tfinishh > 20){
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+{
+	if($connect)
+fclose($connect); 
+
+}
+	exit;
+}
                      }
                    }
                   $sql  = "SELECT * FROM x_db_play_stats WHERE s_player='$x_kill' and s_fall='{$idkill}'";
@@ -699,7 +597,28 @@ echo ' db5 null ';}
                       $ratio_n = substr($ratio_x, 0, 19);
                       usleep(1000);
                       $db3->exec("UPDATE x_db_play_stats SET  s_lasttime='{$dtx2}', s_skill='{$skil_x}', s_ratio='{$ratio_n}' WHERE s_guid='{$vv6}'");
-                      echo '    ' . substr($tfinishh = (microtime(true) - $start), 0, 4);
+                      $tfinishh = substr( (microtime(true) - $start), 0, 4);
+if($tfinishh > 20){
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+{
+	if($connect)
+fclose($connect); 
+
+}
+	exit;
+}					  
                      }
                    }
                   $sql  = "SELECT * FROM x_db_play_stats WHERE s_guid='$vv6'";
@@ -722,36 +641,10 @@ echo ' db5 null ';}
  VALUES ('$x_kill','','','','','','','','','','$date','','$kill','$vv6','','','$idkill','')");
                    }
                  }
- usleep(10000);
-		if(!empty($db)){
-$db = NULL;
-echo ' db null ';}
-if(!empty($db1)){
-$db1 = NULL;
-echo ' db1 null ';}
-if(!empty($db2)){
-$db2 = null;
-echo ' db2 null ';}
-if(!empty($db3)){
-$db3 = NULL;
-echo ' db3 null ';}
-if(!empty($db4)){
-$db4 = NULL;
-echo ' db4 null ';}
-if(!empty($db5)){
-$db5 = NULL;
-echo ' db5 null ';}
-	  
-               }
-              catch (PDOException $e)
-               {
-                print ' FILE:  ' . __FILE__ . '  Exception : ' . $e->getMessage();
-               }
+
               if ($death)
                {
-                try
-                 {
-                  $db3 = new PDO('sqlite:' . $cpath . 'ReCodMod/databases/db3.sqlite');
+
                   if ($guids == 0)
                    {
                     $result = $db3->query("SELECT * FROM x_db_play_stats WHERE s_player='{$xc_death}'");
@@ -774,8 +667,28 @@ echo ' db5 null ';}
                         $ratio_n = substr($ratio_x, 0, 19);
                         usleep(1000);
                         $db3->exec("UPDATE x_db_play_stats SET s_skill='{$skil_x}', s_ratio='{$ratio_n}' WHERE s_player='{$xc_death}'");
-                        echo '    ' . substr($tfinishh = (microtime(true) - $start), 0, 6);
-                       }
+                        $tfinishh = substr( (microtime(true) - $start), 0, 6);
+ if($tfinishh > 20){
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+{
+	if($connect)
+fclose($connect); 
+
+}
+	exit;
+}                      }
                      }
                     $sql  = "SELECT * FROM x_db_play_stats WHERE s_player='$xc_death'";
                     $stat = $db3->query($sql)->fetchColumn();
@@ -787,7 +700,27 @@ echo ' db5 null ';}
                         $db3->exec("UPDATE x_db_play_stats SET s_fall=s_fall +1 WHERE s_player='{$xc_kill}'");
                       $db3->exec("UPDATE x_db_play_stats SET s_deaths=s_deaths +1 WHERE s_player='{$xc_death}'");
                       echo '    ' . substr($tfinishh = (microtime(true) - $start), 0, 7);
-                     }
+if($tfinishh > 20){
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+{
+	if($connect)
+fclose($connect); 
+
+}
+	exit;
+}                     }
                     else
                      {
                       //
@@ -816,7 +749,27 @@ echo ' db5 null ';}
                         usleep(1000);
                         $db3->exec("UPDATE x_db_play_stats SET s_skill='{$skil_x}', s_ratio='{$ratio_n}' WHERE s_guid='{$vv22}'");
                         echo '    ' . substr($tfinishh = (microtime(true) - $start), 0, 6);
-                       }
+if($tfinishh > 20){
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+{
+	if($connect)
+fclose($connect); 
+
+}
+	exit;
+}                       }
                      }
                     $sql  = "SELECT * FROM x_db_play_stats WHERE s_guid='$vv22'";
                     $stat = $db3->query($sql)->fetchColumn();
@@ -828,37 +781,32 @@ echo ' db5 null ';}
                         $db3->exec("UPDATE x_db_play_stats SET s_fall=s_fall +1 WHERE s_guid='{$vv22}'");
                       $db3->exec("UPDATE x_db_play_stats SET s_deaths=s_deaths +1 WHERE s_guid='{$vv22}'");
                       echo '    ' . substr($tfinishh = (microtime(true) - $start), 0, 7);
-                     }
+  if($tfinishh > 20){
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+{
+	if($connect)
+fclose($connect); 
+
+}
+	exit;
+}                   }
                     else
                      {
                       //
                      }
                    }
- usleep(10000);
-		if(!empty($db)){
-$db = NULL;
-echo ' db null ';}
-if(!empty($db1)){
-$db1 = NULL;
-echo ' db1 null ';}
-if(!empty($db2)){
-$db2 = null;
-echo ' db2 null ';}
-if(!empty($db3)){
-$db3 = NULL;
-echo ' db3 null ';}
-if(!empty($db4)){
-$db4 = NULL;
-echo ' db4 null ';}
-if(!empty($db5)){
-$db5 = NULL;
-echo ' db5 null ';}
-	  
-                 }
-                catch (PDOException $e)
-                 {
-                  print ' FILE:  ' . __FILE__ . '  Exception : ' . $e->getMessage();
-                 }
                }
              }
             ++$x_stop_lp;
@@ -871,9 +819,69 @@ echo ' db5 null ';}
           //return;
          }
         ++$x_stop_lp;
-       }
+      
+
+
+
+
+
+ usleep(10000);
+ $zrandom  = rand(0, 8);
+      if ($zrandom  == 4){
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+{
+	if($connect)
+fclose($connect); 
+
+} 
+	  }
+if($tfinishh > 20){
+if(!empty($db))
+$db = NULL;
+if(!empty($db1))
+$db1 = NULL;
+if(!empty($db2))
+$db2 = null;
+if(!empty($db3))
+$db3 = NULL;
+if(!empty($db4))
+$db4 = NULL;
+if(!empty($db5))
+$db5 = NULL;
+if(!empty($connect))
+{
+	if($connect)
+fclose($connect); 
+
+}
+	exit;
+}
+                 }
+                catch (PDOException $e)
+                 {
+                  print ' FILE:  ' . __FILE__ . '  Exception : ' . $e->getMessage();
+                 }
+
+
+
+
+
+
+
+	  }
      }
    }
  }
-?> 
-
+ ?>

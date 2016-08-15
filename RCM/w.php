@@ -286,8 +286,7 @@ while (true)
         if ($stime - $cron_time >= 4700)
          {
           file_put_contents($cpath . "ReCodMod/x_cron/cron_time_top", "");
-          require $cpath . 'ReCodMod/plugins/top_update.php';
-          require $cpath . 'ReCodMod/plugins/banlist_update.php';
+          require $cpath . 'ReCodMod/plugins/_update.php';
          }
        }
      }
@@ -484,7 +483,9 @@ while (true)
                      {
                       ECHO 'vvvvv';
                       require $cpath . 'ReCodMod/functions/inc_functions2.php';
-                      for ($i = 0; $i < $player_cnt; $i++)
+                     if ($x_stop_lp == 0)
+ { 
+					  for ($i = 0; $i < $player_cnt; $i++)
                        {
                         require $cpath . 'ReCodMod/functions/inc_functions3.php';
                         if ((!$valid_id) || (!$valid_ping))
@@ -493,6 +494,8 @@ while (true)
                         rcon('say ^6[^1RCM^3bot^6] ^1WARNING YOU! ^7' . $nickr . '  ^3its only for admins!', '');
                         if ($kicknotingrp == 1)
                          {
+							 if ($x_stop_lp == 0)
+ {
                           usleep($sleep_rcon * 5);
                           if ($game_patch == 'cod1_1.1')
                             rcon('clientkick ' . $unkwnplyersx, '');
@@ -504,8 +507,9 @@ while (true)
                           ++$x_number;
                           ++$x_return;
                           ++$x_stop_lp;
+ }
                          }
-                       }
+					 }}
                      }
                    }
                  }
@@ -567,11 +571,15 @@ while (true)
                   ECHO 'xxxxx';
                   if ($knownplayr == 0)
                    {
+					   if ($x_stop_lp == 0)
+ {
                     ECHO 'zzzzz';
                     usleep($sleep_rcon);
                     rcon('say ^6[^1RCM^3bot^6] ^1WARNING YOU! ^7' . $nickr . '  ^3its not your group commands!', '');
                     if ($kicknotingrp == 1)
                      {
+						 if ($x_stop_lp == 0)
+ {
                       usleep($sleep_rcon * 5);
                       if ($game_patch == 'cod1_1.1')
                         rcon('clientkick ' . $unkwnplyersx, '');
@@ -583,9 +591,10 @@ while (true)
                       ++$x_number;
                       ++$x_return;
                       ++$x_stop_lp;
+ }
                      }
                    }
-                 }
+                 }}
                }
               if ($x_stop_lp == 0)
                {
@@ -662,14 +671,12 @@ while (true)
          }
         else if (preg_match('/Q;/', $parseline, $xnon))
          {
-          usleep($spps/4);
           require $cpath . 'ReCodMod/plugins/log_reader_stats_updater.php';
          }
         else if (preg_match('/K;/', $parseline, $xnon))
          {
-          usleep($spps);
           require $cpath . 'ReCodMod/plugins/log_reader_stats_updater.php';
-          usleep($spps / 4);
+          //usleep($spps / 4);
          }
         else if (preg_match('/D;/', $parseline, $xnon))
          {

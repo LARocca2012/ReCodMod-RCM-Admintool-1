@@ -141,8 +141,12 @@ $na1 = trim($i_namex);
   if(empty($foridnum))
 		  $foridnum = $i_id;
 
-	 if(($na1 == $na2) || ((trim($foridnum) == trim($idnum)) && (trim($foridnum) == trim($i_id))))
-	     {
+
+			  if (($game_patch == 'cod1_1.1') || ($game_mod == 'codam'))
+$jjj = (strpos($mmm, $nnn) !== false); 
+else
+ $jjj = (((trim($foridnum) == trim($idnum)) && (trim($foridnum) == trim($i_id))) || (trim($i_id) == trim($idnum)) || (strpos($mmm, $nnn) !== false));
+    if($jjj){
 usleep($sleep_rcon*2);	
 try
   {

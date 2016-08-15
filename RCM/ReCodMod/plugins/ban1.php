@@ -1,17 +1,17 @@
 <?php
 if ($x_stop_lp == 0 ) {
-////$r_ch = trim($chistx);
+
 
 $x_admin = 0;
 
-//$vipt = (array_search($chistx, $r_adm, true) !== false);
-
-
-
-
-
 try
   {
+////////////////////////////
+ if (empty($bannlist))	  
+$db2 = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db2.sqlite');
+else
+$db2 = new PDO('sqlite:'.$bannlist);
+////////////////////////////
 	   if (empty($adminlists))	  
 $db = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db1.sqlite');
 else
@@ -52,41 +52,13 @@ if ($game_ac == '0'){
 	        $x_admin = 1;
 	}	
 }		  
-$result = null;
-$db = NULL;
-  }
-  catch(PDOException $e)
-  {
-    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
-  }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
   if($x_admin == 0)
 	      {	
 
-
-
-try
-  {
-////////////////////////////
- if (empty($bannlist))	  
-$db2 = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db2.sqlite');
-else
-$db2 = new PDO('sqlite:'.$bannlist);
-////////////////////////////
+ 
 
   $result = $db2->query("SELECT * FROM bans");
     foreach($result as $row)
@@ -122,25 +94,8 @@ AddToLog("[".$datetime."] BANNED NICK KICK: (" . $i_ip . ") (" . $i_name . ")");
 	} 
 }	
 	
-//$result = null;
-//$db2 = NULL;
-  }
-  catch(PDOException $e)
-  {
-    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
-  }
-	
-	
-	
-	
-try
-  {
-////////////////////////////
- if (empty($bannlist))	  
-$db2 = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db2.sqlite');
-else
-$db2 = new PDO('sqlite:'.$bannlist);
-////////////////////////////
+ 
+	 
 
   $result = $db2->query("SELECT * FROM bans WHERE ip='$i_ip'");
     foreach($result as $row)
@@ -192,22 +147,8 @@ AddToLog("[".$datetime."] BANNED IP KICK: (" . $i_ip . ") (" . $i_name . ")");
 		}	
 	}	
 
-//$result = null;
-//$db2 = NULL;
-  }
-  catch(PDOException $e)
-  {
-    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
-  }
-
-
-
-	
-/////////////////////////////////////////////////////////////////////////////////////////////////////		
-
-try
-  {
-$db2 = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db2.sqlite');
+ 
+ 
 
   $result = $db2->query("SELECT * FROM x_words");
     foreach($result as $row)
@@ -244,22 +185,6 @@ AddToLog("[".$datetime."] BANNED NICK KICK: (" . $i_ip . ") (" . $i_name . ")");
         }
     }	
 	
-	
-	
-//$result = null;
-//$db2 = NULL;
-  }
-  catch(PDOException $e)
-  {
-    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
-  }	
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
  
  	if (($rules_kick_bad_named) && (array_search(strtolower($i_name), $rules_badname, true) !== false) && ($i_ping != 111) && ($i_ping != '999'))
 	    {
@@ -322,18 +247,6 @@ if ($i_ip == '')
 	
 
 
-	
-	
-	
-try
-  {
-////////////////////////////
- if (empty($bannlist))	  
-$db2 = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db2.sqlite');
-else
-$db2 = new PDO('sqlite:'.$bannlist);
-////////////////////////////
-
   $result = $db2->query("SELECT * FROM x_ranges WHERE ip_ranges='$x_addr[0].$dat.$x_addr[1]'");
     foreach($result as $row)
     {	
@@ -348,31 +261,11 @@ else { rcon('akick '. $i_id.' " ^6[^7BANNED^6]"', ''); rcon('clientkick '. $i_id
 	
 	
 	
-$result = null;
-$db2 = NULL;
-  }
-  catch(PDOException $e)
-  {
-    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
-  }		
-	
-	
-	
-	
-	
 }	
 
 
 if($stopforumspam == 1)
 {
-
-
-try
-  {
-	   if (empty($adminlists))	  
-$db = new PDO('sqlite:'.$cpath . 'ReCodMod/databases/db1.sqlite');
-else
-$db = new PDO('sqlite:'.$adminlists);
 
 $sql = "SELECT * FROM x_db_admins WHERE s_group='$i_ip' and s_group='0' or s_group='2' LIMIT 1";
 $stat = $db->query($sql)->fetchColumn();
@@ -404,19 +297,7 @@ curl_close($ch);
 //////////////////////////////============================	
 }
 }
-
-
-
-//$db = NULL;
-  
-  catch(PDOException $e)
-  {
-    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
-  }
-
-
-
-
+ 
 
 ///////////////////////////////////////////////////==========================================	
 /*
@@ -454,11 +335,18 @@ $x_admin = 0;
 } 
 
 
-
+$result = null;
+$db = NULL;
+$db2 = NULL;
+  }
+  catch(PDOException $e)
+  {
+    print ' FILE:  '.__FILE__.'  Exception : '.$e->getMessage();
+  }
 
 }
 
 
-} 
+ 
 ?>
  
