@@ -36,7 +36,7 @@ $ik = 0;
    foreach($result as $row)
     {
 	
-
+usleep(50000);
   ++$numberx;
  
 	$id = $row['id'];
