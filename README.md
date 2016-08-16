@@ -374,7 +374,7 @@ New fun messages - gj, shit, wp, n1.
 !nextmap - Show next map 
 
 
-Support CoDaM CodCommands 2.3
+# Support CoDaM CodCommands 2.3
 
 Open __CoDaM_CodCommands.pk3 and in file callback.gsc 
 
