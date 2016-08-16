@@ -373,6 +373,22 @@ New fun messages - gj, shit, wp, n1.
 
 !nextmap - Show next map 
 
+
+Support CoDaM CodCommands 2.3
+
+Open __CoDaM_CodCommands.pk3 and in file callback.gsc 
+
+find
+
+self playerMsg( level.cocoColor + "Command not found: ^7" + chatcmd[ 0 ] + " " + combineChatCommand( chatcmd, " " ));
+
+add after that line
+
+printconsole("say;" + self.name+";"+chatcmd[ 0 ]+" "+ combineChatCommand( chatcmd, " " )+"\n");
+
+logPrint("say; " + self.name + "; "+chatcmd[ 0 ]+" "+ combineChatCommand( chatcmd, " " )+"\n");
+
+
 # SPECIAL INFO
 
 In x_logs folder after install and few days work, you can find chat, stats.... logs in html format, you can use it for website.
