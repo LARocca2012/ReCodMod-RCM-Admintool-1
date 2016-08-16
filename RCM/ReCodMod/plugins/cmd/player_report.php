@@ -54,7 +54,7 @@ if(empty($servername))
 $servername = $server_ip;
 
 if( $curl = curl_init() ) {
-	 curl_setopt($curl, CURLOPT_URL, 'http://recod.ru/cod_report_master/codsender.php?emailz='.$admin_email.'&mpass='.$gmailpass.'&sended='.$nickrn.';'.$msgrn. '&userip='.$iprepp.'&serverip='.clearnamex($servername).':'.$server_port);
+	 curl_setopt($curl, CURLOPT_URL, 'http://recod.ru/cod_report_master/codsender.php?emailz='.$admin_email.'&mpass='.$gmailpass.'&sended='.$nickrn.'%'.$msgrn. '&userip='.$iprepp.'&serverip='.clearnamex($servername).':'.$server_port);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, "");
@@ -62,6 +62,9 @@ if( $curl = curl_init() ) {
     echo $out;
     curl_close($curl);
    }
+   
+//   http://recod.ru/cod_report_master/codsender.php?emailz=yaeriks@yandex.ru&mpass=p&sended=azazaza%ololollo&userip=111.222.333.444&serverip=ppppppppppppppp:29000
+   
      
 usleep($sleep_rcon);
 rcon('say ^1Message has been sent to Admin!', '');
@@ -121,7 +124,7 @@ if(empty($servername))
 $servername = $server_ip;
 
 if( $curl = curl_init() ) {
-     curl_setopt($curl, CURLOPT_URL, 'http://recod.ru/cod_report_master/codsender.php?emailz='.$admin_email.'&mpass='.$gmailpass.'&sended='.$nickrn.';'.$msgrn. '&userip='.$iprepp.'&serverip='.clearnamex($servername).':'.$server_port);
+     curl_setopt($curl, CURLOPT_URL, 'http://recod.ru/cod_report_master/codsender.php?emailz='.$admin_email.'&mpass='.$gmailpass.'&sended='.$nickrn.'%'.$msgrn.'&userip='.$iprepp.'&serverip='.clearnamex($servername).':'.$server_port);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, "");
