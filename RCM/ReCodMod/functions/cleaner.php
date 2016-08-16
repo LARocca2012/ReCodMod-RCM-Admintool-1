@@ -139,14 +139,23 @@ fclose($connx);
  usleep($sleep_rcon*3);
  require $cpath.'ReCodMod/functions/getinfo/fs_game.php';
  fclose($connx);
-       list($onee, $twoo, $threee, $fourr) = explode('"', $fssgame);              
-	  
+       list($onee, $twoo, $threee, $fourr) = explode('"', $fssgame);          
+
+
 if (strpos($_SERVER['OS'], 'Windows') !== false)
 {
 		if (strpos($xxkmb, '\^7') !== false)
 		$pppath = $pppath.'\main';
+
+if ($fourr == "^7")
+$fourr = sevenofff($fourr);
+
+if(empty($fourr))
+$fourr = 'main';
+else if ($fourr == "")
+$fourr = 'main';
 	
-  $mplogfilenew = $pppath.'\##&###'.sevenofff($xxkml).'\##&###'.sevenofff($fourr);
+  $mplogfilenew = $pppath.'\##&###'.sevenofff($fourr).'\##&###'.sevenofff($xxkml);
   
 $exec = exec("hostname");
 $hostname = trim($exec);
@@ -165,8 +174,16 @@ exit; }
 }else{
 	if (strpos($xxkmb, '/^7') !== false)
 		$pppath = $pppath.'/main';
+
+if ($fourr == "^7")
+$fourr = sevenofff($fourr);
+
+if(empty($fourr))
+$fourr = 'main';
+else if ($fourr == "")
+$fourr = 'main';
 	
-  $mplogfilenew = $pppath.'/'.sevenofff($xxkml).'/'.sevenofff($fourr);
+  $mplogfilenew = $pppath.'/'.sevenofff($fourr).'/'.sevenofff($xxkml);
   
 
 //echo $localIP = getHostByName(php_uname('n'));

@@ -28,4 +28,7 @@ unset($value);
  $fssgame = $outxxx[0];
 //cod  "fs_game" is:"^7" default:"^7"
 //cod4 "fs_game" is: "mods/r_zombies" default: "" info: "Game data directory. Must be "" or a sub directory of 'mods/'."
+
+//     "fs_game" is: "" default: "" info: "Game data directory. Must be "" or a sub directory of 'mods/'."
+
 ?>

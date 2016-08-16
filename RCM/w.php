@@ -31,7 +31,10 @@ if (file_exists($log_folder . '/g_log.log'))
     $mplogfiler = $parseglog;
    }
  }
-if (trim($mplogfiler) != trim($mplogfile))
+if (strpos($mplogfiler, $mplogfile) !== false){
+	echo '/+/';	
+}
+else
  {
   echo "\n YOU USE WRONG LOGFILE IN cfg/_connection.php \n LINE WITH mplogfile - \n\n CHANGE \n" . $mplogfiler . " \n TO \n" . $mplogfile . " \n FOR RCM WORKING!!! \n \n \n";
   sleep(130);

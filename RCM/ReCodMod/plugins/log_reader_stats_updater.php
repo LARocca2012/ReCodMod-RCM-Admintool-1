@@ -12,7 +12,7 @@ if ($x_stop_lp == 0)
       //--------  104:46 Q;6;xxx
       list($x1e, $x2e, $x4e) = explode(';', $parseline);
       ///////////////error fix
-      $counttdot = substr_count($parselinetxt, ';');
+      $counttdot = substr_count($parseline, ';');
       if ($counttdot > 2)
         $x_stop_lp = 2;
       ///////////////error fix
@@ -21,7 +21,7 @@ if ($x_stop_lp == 0)
      {
       //--------  4471:49Q;0;2;xxx
       ///////////////error fix
-      $counttdot = substr_count($parselinetxt, ';');
+      $counttdot = substr_count($parseline, ';');
       if ($counttdot > 3)
         $x_stop_lp = 3;
       ///////////////error fix		
@@ -170,26 +170,25 @@ echo ' db5 null ';}
      if (strpos($parseline, 'K;') !== false)
      {
 		 
-		
+        $parselinetxt = delxkll($parseline);
+        ///////////////error fix
+        $counttdot    = substr_count($parseline, ';');
+        if ($counttdot < 9)
+          $x_stop_lp = 10;
+        ///////////////error fix
+
       if ($x_stop_lp == 0)
        {
 	          try
            {
             $db3  = new PDO('sqlite:' . $cpath . 'ReCodMod/databases/db3.sqlite');
 
-	   
-		   
         //echo '-------------';
         ///////////////////////////
         require $cpath . 'cfg/_connection.php';
         require $cpath . 'cfg/_settings.php';
         ///////////////////////////////////////////////////////////////////////////////////////////////
-        $parselinetxt = delxkll($parseline);
-        ///////////////error fix
-        $counttdot    = substr_count($parselinetxt, ';');
-        if ($counttdot < 9)
-          $x_stop_lp = 10;
-        ///////////////error fix
+
         /////736:04 K;6;allies;NOOB1;7;allies;NOOB2   ;mosin_nagant_mp;107;MOD_PISTOL_BULLET;torso_upper
         if (($game_patch == 'cod1_1.1') || ($game_mod == 'codam'))
          {
